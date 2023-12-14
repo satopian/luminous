@@ -1,8 +1,6 @@
-const webpack = require("webpack");
 const path = require("path");
 const env = require("yargs").argv.env; // use --env with webpack 2
 const ClosureCompilerPlugin = require("webpack-closure-compiler");
-const licenseBanner = require("./build/banner");
 
 let libraryName = "luminous";
 
@@ -46,9 +44,6 @@ function buildWithEnv(mode, outputFile) {
         },
         test: /^(?!.*tests\.webpack).*$/,
         concurrency: 3
-      }),
-      new webpack.BannerPlugin({
-        banner: licenseBanner
       }),
     ]
   };

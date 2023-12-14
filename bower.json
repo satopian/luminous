@@ -7,7 +7,7 @@
     "dist/luminous-basic.css"
   ],
   "authors": [
-    "imgix"
+    "paulstraw"
   ],
   "license": "BSD-2",
   "keywords": [
@@ -16,7 +16,7 @@
     "image",
     "images"
   ],
-  "homepage": "https://github.com/imgix/luminous",
+  "homepage": "https://github.com/paulstraw/luminous",
   "moduleType": [],
   "ignore": [
     "**/.*",

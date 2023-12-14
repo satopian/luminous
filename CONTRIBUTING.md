@@ -68,7 +68,7 @@ project:
    # Navigate to the newly cloned directory
    cd luminous
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/imgix/luminous
+   git remote add upstream https://github.com/paulstraw/luminous
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
