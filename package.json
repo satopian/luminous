@@ -4,18 +4,18 @@
   "description": "A simple, lightweight, no-dependencies JavaScript image lightbox.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paulstraw/luminous.git"
+    "url": "git+https://github.com/imgix/luminous.git"
   },
   "keywords": [
     "javascript",
     "lightbox"
   ],
-  "author": "paulstraw",
+  "author": "imgix",
   "license": "BSD-2",
   "bugs": {
-    "url": "https://github.com/paulstraw/luminous/issues"
+    "url": "https://github.com/imgix/luminous/issues"
   },
-  "homepage": "https://github.com/paulstraw/luminous#readme",
+  "homepage": "https://github.com/imgix/luminous#readme",
   "contributors": [
     "Frederick Fogerty <frederick.fogerty@gmail.com> (https://github.com/frederickfogerty)",
     "Jakub Duras <jakub@duras.me> (https://duras.me)",
@@ -29,10 +29,10 @@
     "build:serial": "npm run clean && run-s build:css:** build:js:**",
     "build:css:dev": "mkdir -p dist && cp src/css/luminous-basic.css dist/",
     "build:css:prod": "mkdir -p dist && postcss src/css/luminous-basic.css > dist/luminous-basic.min.css",
-    "build:js:dist:prod": "webpack --env build && cp dist/luminous.min.js dist/luminous.js",
+    "build:js:dist:prod": "NODE_OPTIONS='--openssl-legacy-provider' webpack --env build && cp dist/luminous.min.js dist/luminous.js",
     "build:js:lib:commonjs": "cross-env BABEL_ENV=commonjs babel src/js --out-dir lib --source-maps",
     "build:js:lib:es": "cross-env BABEL_ENV=es babel src/js --out-dir es --source-maps",
-    "build:watch": "webpack --progress --colors --watch --env dev",
+    "build:watch": "NODE_OPTIONS='--openssl-legacy-provider' webpack --progress --colors --watch --env dev",
     "clean": "rimraf lib es dist",
     "dev": "npm run build:watch",
     "format:check": "prettier --list-different \"{src,test}/**/*.js\"",
@@ -80,6 +80,7 @@
     "karma-webpack": "4.0.2",
     "npm-run-all": "4.1.5",
     "postcss": "8.4.24",
+    "postcss-banner": "4.0.1",
     "postcss-cli": "9.1.0",
     "prettier": "2.8.8",
     "rimraf": "3.0.2",
